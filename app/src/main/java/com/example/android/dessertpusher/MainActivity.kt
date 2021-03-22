@@ -175,11 +175,9 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
      * Called when the user navigates away from the app but might come back
      */
     override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
         outState.putInt(KEY_REVENUE, revenue)
         outState.putInt(KEY_DESSERT_SOLD, dessertsSold)
-        outState.putInt(KEY_TIMER_SECONDS, dessertTimer.secondsCount)
-        Timber.i("onSaveInstanceState Called")
-        super.onSaveInstanceState(outState)
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
